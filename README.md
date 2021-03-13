@@ -1,3 +1,4 @@
+The readme file will be updated recently, with the information about how to use it in detail, as well as ideas behind the scenes.
 # jsworkers
 Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. 
 
