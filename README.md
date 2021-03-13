@@ -153,8 +153,8 @@ tempJsworkers.map(square).reduce(add).then(log).catch(error); // (**)
 tempJsworkers.map(cube).reduce(add).then(log).catch(error); // (***)         
 ```
 map() in line (\*) calculates the Fibonacci Sequence, and save the result temporarily in `tempJsworkers`. Based on that, line (\*\*) computes the sum of the square , and line (\*\*\*) figures the sum of cube. <br/>
-line (\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\sum_{i=1}^{n}\[fib(i)\]^{2}) <br/><br/>
-line (\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{3}](https://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%5C%5Bfib(i)%5C%5D%5E%7B3%7D) <br/>
+line (\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\sum_{i=1}^{n}\[fib(i)\]^{2}) <br/>
+line (\*\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{3}](https://latex.codecogs.com/svg.latex?%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%5C%5Bfib(i)%5C%5D%5E%7B3%7D) <br/>
 
 
 ## License
