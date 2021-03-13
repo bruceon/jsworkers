@@ -31,7 +31,7 @@ setOptions way:
 // the second parameter of setOptions() method is related with function chaining and will be explained later.
 Jsworkers.setOptions({processPreferred: false}, true); 
 ```
-Without the options, worker thead will be selected as default.
+Without the option, worker thead will be selected as default.
 
 ### Promise and unlimited chaining
 ......
