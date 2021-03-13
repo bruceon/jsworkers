@@ -21,13 +21,16 @@ For the node.js environment that supports both (process & worker thread), you ha
 
 Constructor way:
 ```
-let Jsworkers = new Jsworkers(data, {processPreferred: true}); // use process instead of worker thread
+// use process instead of worker thread
+let Jsworkers = new Jsworkers(data, {processPreferred: true}); 
 ```
 setOptions way:
 ```
-Jsworkers.setOptions({processPreferred: false}, true); // use worker thead instead of process
+// use worker thead instead of process
+// the second parameter of setOptions() method is related with function chaining and will be explained later.
+Jsworkers.setOptions({processPreferred: false}, true); 
 ```
-the second parameter of setOptions() method is related with function chaining and will be explained later.
+Without the options, worker thead will be selected as default.
 
 ### Promise and unlimited chaining
 ......
