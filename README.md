@@ -29,7 +29,7 @@ var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 	    71,72,73,74,75,76,77,78,79,80,
 	    81,82,83,84,85,86,87,88,89,90,
 	    91,92,93,94,95,96,97,98,99,100];
-var jsworkers = new Jsworkers(data);
+let jsworkers = new Jsworkers(data);
 
 function log(result) {
   console.log(result);
@@ -158,6 +158,23 @@ line (\*\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{3}](https://latex.cod
 Two branches (line(\*\*) and line(\*\*\*)) execute independently and have no impact on each other.
 
 ### Keep input data unmodified
+jsworkers keeps the original input data unmodified, and return the result through resolved handler. You can check it immediately by using chaining. You can also check it at any time that you want.
+```
+function log(result) {
+  // result parameter contains the result of each computing task
+  console.log(result);
+  return result;
+}
+
+// data will never be modified
+let jsworkers = new Jsworkers(data);
+
+// check result inline
+jsworkers.spawn(...).then(log);
+
+let mapWorker = jsworkers.map(...);
+//check result at anytime that you want
+mapWorker.then(log);
 
 ## License
 MIT
