@@ -1,0 +1,26 @@
+{
+  "name": "jsworkers",
+  "version": "1.0.0",
+  "description": "Javascript parallel-computing library for both node.js and browser environment.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brucecan/jsworkers.git"
+  },
+  "keywords": [
+    "parallel",
+    "worker",
+    "process",
+    "thread",
+    "webworker"
+  ],
+  "author": "brucecan",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/brucecan/jsworkers/issues"
+  },
+  "homepage": "https://github.com/brucecan/jsworkers#readme"
+}
