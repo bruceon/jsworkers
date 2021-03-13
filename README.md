@@ -15,30 +15,11 @@ $ npm install jsworkers
 ## Usage
 ### Cover all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)<br/><br/>
 Additionally, jsworkers supports:
-### Three types of parallel execution
-jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js instance without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
-
-For the node.js environment that supports both (process & worker thread), you have the discretion to choose any of them by specifing the "options" parameter either for the Jsworkers constructor or for the steOptions method:
-
-Constructor way:
-```
-// use process instead of worker thread
-let Jsworkers = new Jsworkers(data, {processPreferred: true}); 
-```
-setOptions way:
-```
-// use worker thead instead of process
-// the second parameter of setOptions() method is related with function chaining and will be explained later.
-Jsworkers.setOptions({processPreferred: false}, true); 
-```
-Without the option, worker thead will be selected as default.
-
-### Promise and unlimited chaining
-......
-
-Require the jsworkers module and create a `Jsworkers` instance:
+### A full example
 ```js
-var Jsworkers = require("./jsworkers");
+// install the moudle first by:
+//   $ npm install jsworkers
+var Jsworkers = require("jsworkers");
 var data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
             11,12,13,14,15,16,17,18,19,20,
 	    21,22,23,24,25,26,27,28,29,30,
@@ -64,9 +45,24 @@ function add(d) {
   return d[0] + d[1];
 }
 
-jsworkers.map(square).then(log).reduce(add).then(log);
+function error(e) {
+  console.log(e);
+}
+
+// spawn 8 node.js worker threads to execute the map task, each of them runs the 'square'
+// and then output the map result
+// and then create 4 node.js processes (instead of worker threads) to execute the reduce task, each of them runs the 'add'
+// and then output the reduce result
+// any exceptions/errors happening during the whole process will be caught by the error handler. 
+jsworkers.setOptions({maxWorkers: 8, processPreferred: false})
+         .map(square)
+	 .then(log)
+	 .setOptions({maxWorkers: 4, processPreferred: true})
+	 .reduce(add)
+	 .then(log)
+	 .catch(error);
 ```
-Output
+Output:
 ```
 $ node app.js
 [
@@ -85,6 +81,30 @@ $ node app.js
 ]
 338350
 ```
+
+### Three types of parallel execution
+jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js instance without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
+
+For the node.js environment that supports both (process & worker thread), you have the discretion to choose any of them by specifing the "options" parameter either for the Jsworkers constructor or for the steOptions method:
+
+Constructor way:
+```
+// use process instead of worker thread
+let Jsworkers = new Jsworkers(data, {processPreferred: true}); 
+```
+setOptions way:
+```
+// use worker thead instead of process
+// the second parameter of setOptions() method is related with function chaining and will be explained later.
+Jsworkers.setOptions({processPreferred: false}, true); 
+```
+Without the option, worker thead will be selected as default.
+
+### Promise and unlimited chaining
+jsworkers uses promise through delegation, basically by keeping promise in a property to track the status of each parallel-computing task. Based on promise, jsworkers provides a couple of recipes to do function chaining, something looks like this:
+
+
+Require the jsworkers module and create a `Jsworkers` instance:
 
 ## License
 MIT
