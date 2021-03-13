@@ -153,7 +153,7 @@ tempJsworkers.map(square).reduce(add).then(log).catch(error); // (**)
 tempJsworkers.map(cube).reduce(add).then(log).catch(error); // (***)         
 ```
 map() in line (\*) calculates the Fibonacci Sequence, and save the result temporarily in `tempJsworkers`. Based on that, line (\*\*) computes the sum of the square , and line (\*\*\*) figures the sum of cube. <br/>
-line (\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\sum_{i=1}^{n}\[fib(i)\]^{2}) <br/>
+line (\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\sum_{i=1}^{n}\[fib(i)\]^{2}) <br/><br/>
 line (\*\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{0.5}](https://latex.codecogs.com/svg.latex?\sum_{i=1}^{n}\[fib(i)\]^{0.5}) <br/>
 
 
