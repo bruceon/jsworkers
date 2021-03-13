@@ -14,7 +14,7 @@ $ npm install jsworkers
 ```
 ## Usage
 ### Cover all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)
-<br/><br/>
+<br/>
 Additionally, jsworkers supports:
 ### Three types of parallel execution
 jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js instance without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
