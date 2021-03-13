@@ -1,7 +1,7 @@
 Readme file is not finished yet. 
 
 # jsworkers
-Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. 
+Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. jsworkers provides some handy additions like worker thread support (for node.js), unlimited function chaining, built-in promise support ...... to make javascript parallel programming even more interesting. 
 
 ## Installation
 ### For node.js app:
@@ -13,9 +13,10 @@ $ npm install jsworkers
 <script src='./jsworkers/lib/index.js'></script>
 ```
 ## Usage
-### Support all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)
+### Cover all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)
 ### Three types of parallel execution
-jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
+jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js instance without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
+
 For the node.js environment that supports both (process & worker thread), you have the discretion to choose any of them by specifing the "options" parameter either for the Jsworkers constructor or for the steOptions method:
 
 Constructor way:
