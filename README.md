@@ -11,7 +11,7 @@ $ npm install jsworkers
 <script src='./jsworkers/lib/index.js'></script>
 ```
 ## Usage
-jsworkers covers all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)<br/><br/>, like require, spawn, map, reduce, options and environments (you may refer to parallel.js readme file for more information), and provides more regarding computing chaining, changing options on the fly, node.js worker threads supporting, promise based error catching and so on. 
+jsworkers covers all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js), like require, spawn, map, reduce, options and environments (you may refer to parallel.js readme file for more information), and provides more regarding computing chaining, changing options on the fly, node.js worker threads supporting, promise based error catching and so on. 
 
 ### A full example
 ```js
