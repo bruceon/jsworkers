@@ -110,6 +110,12 @@ jsworkers.setOptions({maxWorkers: 8, processPreferred: false})
 	 .then(log)
 	 .catch(error);
 ```
+setOptions is not a necessity here, but it gives you the flexibility to change options on the fly, even change the options of using process/thread, the worker amount, the execution scripts of the worker, etc. The second parameter of setOptions supplys extra adaptability: 
+```
+jsworkers.setOptions({processPreferred: true}, true).map(square); // (*)
+jsworkers.map(cube); //(**)
+```
+The setOptions() call in line (\*) is provided with a 
 ongoing......
 ## License
 MIT
