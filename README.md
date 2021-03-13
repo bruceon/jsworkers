@@ -1,13 +1,19 @@
-The readme file will be updated recently, with the information about how to use it in detail, as well as ideas behind the scenes.
 # jsworkers
 Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. 
 
+## Installation
+### For node.js app:
+```
+$ npm install jsworkers
+```
+### For web app:
+```
+<script src='./jsworkers/lib/index.js'></script>
+```
+## Usage
+### Support all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)
+### Support three types of parallel execution
 
-## Install
-```
-npm install --save jsworkers
-```
-## Use
 Require the jsworkers module and create a `Jsworkers` instance:
 ```js
 var Jsworkers = require("./jsworkers");
@@ -57,10 +63,9 @@ $ node app.js
 ]
 338350
 ```
-## Related
-- [parallel.js](https://github.com/parallel-js/parallel.js)
 
 ## License
 MIT
 
-The readme file will be updated recently, with the information about how to use it in detail, as well as ideas behind the scenes.
+## Acknowledgements
+- [parallel.js](https://github.com/parallel-js/parallel.js)
