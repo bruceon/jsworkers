@@ -1,5 +1,3 @@
-Readme file is not finished yet. 
-
 # jsworkers
 Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. jsworkers provides some handy additions like worker thread support (for node.js), unlimited function chaining, built-in promise support ...... to make javascript parallel programming even more interesting. 
 
@@ -13,8 +11,8 @@ $ npm install jsworkers
 <script src='./jsworkers/lib/index.js'></script>
 ```
 ## Usage
-### Cover all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)<br/><br/>
-Additionally, jsworkers supports:
+jsworkers covers all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)<br/><br/>, like require, spawn, map, reduce, options and environments (you may refer to parallel.js readme file for more information), and provides more regarding computing chaining, changing options on the fly, node.js worker threads supporting, promise based error catching and so on. 
+
 ### A full example
 ```js
 // install the moudle first by:
@@ -102,10 +100,16 @@ Without the option, worker thead will be selected as default.
 
 ### Promise and unlimited chaining
 jsworkers uses promise through delegation, basically by keeping promise in a property to track the status of each parallel-computing task. Based on promise, jsworkers provides a couple of recipes to do function chaining, something looks like this:
-
-
-Require the jsworkers module and create a `Jsworkers` instance:
-
+```
+jsworkers.setOptions({maxWorkers: 8, processPreferred: false})
+         .map(square)
+	 .then(log)
+	 .setOptions({maxWorkers: 4, processPreferred: true})
+	 .reduce(add)
+	 .then(log)
+	 .catch(error);
+```
+ongoing......
 ## License
 MIT
 
