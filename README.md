@@ -126,6 +126,35 @@ Without the second parameter (or give it a value false), setOptions() will impac
 jsworkers.map(...).map(...)<i>.setOptions({processPreferred: true}).reduce(...)</i>
 </pre>
 
+### Multiple computing branch supporting
+```
+function fib(n) {
+  return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
+}
+
+function square(n) {
+  return n * n;
+}
+
+function cube(n) {
+  return n * n * n;
+}
+
+function add(d) {
+  return d[0] + d[1];
+}
+
+function error(e) {
+  console.log(e);
+}
+
+let tempJsworkers = jsworkers.map(fib); // (*)
+tempJsworkers.map(square).reduce(add).then(log).catch(error); // (**)
+tempJsworkers.map(cube).reduce(add).then(log).catch(error); // (**)         
+```
+map() in line (\*) calculates the Fibonacci Sequence, and save the result temporarily in `tempJsworkers`. Based on that, line (\*\*) computes the sum of the square, and line (\*\*\*) figures the sum of cube.
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}) 
+
 ## License
 MIT
 
