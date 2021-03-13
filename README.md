@@ -13,7 +13,19 @@ $ npm install jsworkers
 ## Usage
 ### Support all the features provided by [parallel.js](https://github.com/parallel-js/parallel.js)
 ### Three types of parallel execution
-jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. 
+jsworkers supports process (node.js), worker thread (node.js) and web worker (browser). For node.js app, worker thread is preferable considering forking processes is expensive in terms of resources. When running on a node.js without worker-thread feature enabled (v10.x.x or before)，process will be selected as an alternative. In browser, web worker is the only choice for jsworkers.
+For the node.js environment that supports both (process & worker thread), you have the discretion to choose any of them by specifing the "options" parameter either for the Jsworkers constructor or for the steOptions method:
+
+Constructor way:
+```
+let Jsworkers = new Jsworkers(data, {processPreferred: true}); // use process instead of worker thread
+```
+setOptions way:
+```
+Jsworkers.setOptions({processPreferred: false}, true); // use worker thead instead of process
+```
+the second parameter of setOptions() method is related with function chaining and will be explained later.
+
 
 Require the jsworkers module and create a `Jsworkers` instance:
 ```js
