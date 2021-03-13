@@ -1,3 +1,5 @@
+Readme file is not finished yet. 
+
 # jsworkers
 Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. 
 
@@ -26,6 +28,8 @@ Jsworkers.setOptions({processPreferred: false}, true); // use worker thead inste
 ```
 the second parameter of setOptions() method is related with function chaining and will be explained later.
 
+### Promise and unlimited chaining
+......
 
 Require the jsworkers module and create a `Jsworkers` instance:
 ```js
