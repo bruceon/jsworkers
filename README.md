@@ -15,6 +15,7 @@ jsworkers covers all the features provided by [parallel.js](https://github.com/p
 
 ### A full example
 ```js
+// filename: app.js
 // install the moudle first by:
 //   $ npm install jsworkers
 var Jsworkers = require("jsworkers");
