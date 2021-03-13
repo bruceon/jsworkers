@@ -155,7 +155,7 @@ tempJsworkers.map(cube).reduce(add).then(log).catch(error); // (**)
 map() in line (\*) calculates the Fibonacci Sequence, and save the result temporarily in `tempJsworkers`. Based on that, line (\*\*) computes the sum of the square, and line (\*\*\*) figures the sum of cube.
 ![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}) 
 
-![\Large \sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\Large&space;\sum_{i=1}^{n}\[fib(i)\]^{2})
+![\small \sum_{i=1}^{n}\[fib(i)\]^{2}](https://latex.codecogs.com/svg.latex?\small&space;\sum_{i=1}^{n}\[fib(i)\]^{2})
 ## License
 MIT
 
