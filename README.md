@@ -111,10 +111,10 @@ jsworkers.setOptions({maxWorkers: 8, processPreferred: false})
 	 .catch(error);
 ```
 setOptions is not a necessity here, but it gives you the flexibility to change options on the fly, even change the options of using process/thread, the worker amount, the execution scripts of the worker, etc. The second parameter of setOptions supplys extra adaptability: 
-```
-jsworkers.setOptions({processPreferred: true}, true).map(square); // (*)
+<pre>
+jsworkers.setOptions({processPreferred: true}, <b>true</b>).map(square); // (*)
 jsworkers.map(cube); //(**)
-```
+</pre>
 The setOptions() call in line (\*) is provided with a second parameter (value true). It tells setOptions() method to change the options in the immediate left object (visually left, here, it's jsworkers). As a result, both the map() call in line (\*) and line (\*\*) will use process instead of worker thread for calculating purpose. Similarly, in the following code snippet, the first map() call will use worker thread (because it's default), the second map() and the following reduce() will employ process instead: 
 <pre>
 // the following setOptions() will pose an impact on the italic part
