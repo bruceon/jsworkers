@@ -158,7 +158,7 @@ line (\*\*\*) finally produces ![\sum_{i=1}^{n}\[fib(i)\]^{3}](https://latex.cod
 Two branches (line(\*\*) and line(\*\*\*)) execute independently and have no impact on each other.
 
 ### Keep input data unmodified
-jsworkers keeps the original input data unmodified, and return the result through resolved handler. You can check it immediately by using chaining. You can also check it at any time that you want.
+jsworkers keeps the original input data unmodified, and return the result through resolved handler. You can check it immediately by using chaining. You can also check it at anytime that you want.
 ```
 function log(result) {
   // result parameter contains the result of each computing task
@@ -175,7 +175,7 @@ jsworkers.spawn(...).then(log);
 let mapWorker = jsworkers.map(...);
 //check result at anytime that you want
 mapWorker.then(log);
-
+```
 ## License
 MIT
 
