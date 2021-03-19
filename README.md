@@ -123,7 +123,7 @@ jsworkers.map(...).𝑚𝑎𝑝(...).𝑠𝑒𝑡𝑂𝑝𝑡𝑖𝑜𝑛𝑠({�
 Without the second parameter (or give it a value false), setOptions() will impact on its right (visually right) part:
 <pre>
 // the following setOptions() will pose an impact on the italic part
-jsworkers.map(...).map(...)<i>.setOptions({processPreferred: true}).reduce(...)</i>
+jsworkers.map(...).map(...).𝑠𝑒𝑡𝑂𝑝𝑡𝑖𝑜𝑛𝑠({𝑝𝑟𝑜𝑐𝑒𝑠𝑠𝑃𝑟𝑒𝑓𝑒𝑟𝑟𝑒𝑑: 𝑡𝑟𝑢𝑒}).𝑟𝑒𝑑𝑢𝑐𝑒(...)
 </pre>
 
 ### Multiple computing branch supporting
