@@ -117,10 +117,8 @@ jsworkers.map(cube); //(**)
 </pre>
 The setOptions() call in line (\*) is provided with a second parameter (value true). It tells setOptions() method to change the options in the immediate left object (visually left, here, it's jsworkers). As a result, both the map() call in line (\*) and line (\*\*) will use process instead of worker thread for calculating purpose. Similarly, in the following code snippet, the first map() call will use worker thread (because it's default), the second map() and the following reduce() will employ process instead: 
 <pre>
-<code>
 // the following setOptions() will pose an impact on the italic part
 jsworkers.map(...)<i>.map(...).setOptions({processPreferred: true}, <b>true</b>).reduce(...)</i>
-</code>
 </pre>
 Without the second parameter (or give it a value false), setOptions() will impact on its right (visually right) part:
 <pre>
