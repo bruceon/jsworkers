@@ -119,6 +119,7 @@ The setOptions() call in line (\*) is provided with a second parameter (value tr
 <pre>
 // the following setOptions() will pose an impact on the italic part
 jsworkers.map(...)<i>.map(...).setOptions({processPreferred: true}, <b>true</b>).reduce(...)</i>
+jsworkers.map(...).𝑚𝑎𝑝(...).𝑠𝑒𝑡𝑂𝑝𝑡𝑖𝑜𝑛𝑠({𝑝𝑟𝑜𝑐𝑒𝑠𝑠𝑃𝑟𝑒𝑓𝑒𝑟𝑟𝑒𝑑: 𝑡𝑟𝑢𝑒}, 𝑡𝑟𝑢𝑒).𝑟𝑒𝑑𝑢𝑐𝑒(...)
 </pre>
 Without the second parameter (or give it a value false), setOptions() will impact on its right (visually right) part:
 <pre>
