@@ -1,5 +1,5 @@
 # jsworkers
-Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's created by modifying the source code of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. jsworkers provides some handy additions like worker thread support (for node.js), unlimited function chaining, built-in promise support ...... to make javascript parallel programming even more interesting. 
+Javascript parallel-computing library for both node.js and browser environment, no dependencies. It's a reworking of parallel.js (https://github.com/parallel-js/parallel.js), which is a well designed tiny library for multi-core processing in Javascript environment. jsworkers provides some handy additions like worker thread support (for node.js), unlimited function chaining, built-in promise support ...... to make javascript parallel programming even more interesting. 
 
 ## Installation
 ### For node.js app:
