@@ -15,7 +15,8 @@
     "worker",
     "process",
     "thread",
-    "webworker"
+    "webworker",
+    "paralleljs"
   ],
   "author": "brucecan",
   "license": "MIT ",
