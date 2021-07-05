@@ -1,6 +1,6 @@
 {
   "name": "jsworkers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Javascript parallel-computing library for both node.js and browser environment.",
   "main": "lib/index.js",
   "scripts": {
